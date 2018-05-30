@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-navbar color="mynavbar">
+    <ion-title>YUVA</ion-title>
+      <ion-buttons end>
+          <button style="text-transform: none;" (click)="gotoProfile()" ion-button outline full color="mybutton">
+                Profile
+            </button>
+          <button style="text-transform: none;" (click)="logOut()" ion-button full color="mybutton">
+                LogOut
+            </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    
+    <ion-slides color="mysegment"  class="image-slider" dir="rtl" loop="true" slidesPerView="1">
+        <ion-slide *ngFor = "let video of trustedVideoUrl; let i = index" height="80%" scroll="true" overflow-scroll="true">
+          <!--  <ion-view view-title="Videos" cache-view="false">
+                <ion-content>
+      <iframe width="100%" height="215" [src]="video" frameborder="0" allowfullscreen></iframe>  
+                    </ion-content>
+            </ion-view>-->
+            <iframe width="100%" height="215" [src]="video" frameborder="0" allowfullscreen ></iframe> 
+        <h4>{{videos[i].description}}</h4>
+    </ion-slide>
+  </ion-slides>
+    
+    <ion-segment color="mynavbar" [(ngModel)]="yuva">
+    <ion-segment-button value="campus">
+      Campus
+    </ion-segment-button>
+    <ion-segment-button value="workshop">
+      Workshops
+    </ion-segment-button>
+    <ion-segment-button value="internship">
+      Internship
+    </ion-segment-button>
+  </ion-segment>
+    
+    <div [ngSwitch]="yuva">
+
+        <p *ngIf="noCampus" > No Campus as of now. Keep looking fo updates</p> 
+    <ion-list *ngSwitchCase="'campus'">
+    <ion-item (click)="gotoDetails(item)" *ngFor="let item of events">
+      
+      <ion-thumbnail item-left>
+        <img src="{{item.img}}"/>
+      </ion-thumbnail>
+        <h2>{{item.name}}</h2>
+        <h4>Venue: {{item.venue}}</h4>
+        <h4>Date: {{item.date}}</h4>
+          
+    </ion-item>
+       
+  </ion-list>
+        
+    <ion-list *ngSwitchCase="'workshop'">
+    <ion-item (click)="gotoWorkshop(item)" *ngFor="let item of workshops">
+        
+      <ion-thumbnail item-left>
+        <img src="{{item.img}}"/>
+      </ion-thumbnail>
+        <h2 style="color: #607d8b;" text-wrap>{{item.name}}</h2>
+        <h4 style="color: #607d8b;">Venue: {{item.venue}}</h4>
+        <!--<h4 text-wrap style="color: #607d8b;">Date: {{item.timing}}</h4>-->
+    </ion-item>
+  </ion-list>
+  <ion-list *ngSwitchCase="'internship'">
+    <ion-item (click)="gotoInternship(item)" *ngFor="let item of internships">
+        
+      <ion-thumbnail item-left>
+        <img src="{{item.img}}"/>
+      </ion-thumbnail>
+        <h2 text-wrap>{{item.name}}</h2>
+        <h4>Venue: {{item.venue}}</h4>
+        <h4>Duration: {{item.duration}}</h4>
+    </ion-item>
+  </ion-list>
+  </div>
+    
+    
+   
+      
+  
+</ion-content>
+<ion-footer >
+  <ion-toolbar height="10px" color="mynavbar">
+    <ion-buttons>
+            <button style="text-transform: none;" (click)="gotoTraining()" start ion-button color="mybutton">
+                Trainings
+            </button>
+        <button style="text-transform: none;" (click)="gotoGallery()" start ion-button color="mybutton">
+                Gallery
+            </button>
+        <button style="text-transform: none;" (click)="gotoAboutUs()" ion-button block color="mybutton">
+                About Us
+            </button>
+        <button style="text-transform: none;" (click)="gotoNews()" end ion-button block color="mybutton">
+Updates
+        </button>
+        
+        </ion-buttons>
+       
+  </ion-toolbar>
+</ion-footer>

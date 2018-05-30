@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-navbar color="mynavbar">
+    <ion-title>
+      Drive Details
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page10">
+  <img src="{{data.img}}" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+  <button *ngIf="isProfileComplete" (click)="onApply()" id="driveDetails-button4" ion-button block>
+    Apply
+  </button>
+    <p *ngIf="!isProfileComplete"> <b>Note</b>: Complete your profile to Apply <button ion-button small full (click)="gotoProfile()">Profile</button></p>
+  <h3 id="driveDetails-heading12" style="color:#000000;">
+    Name
+  </h3>
+  <div id="driveDetails-markdown11" class="show-list-numbers-and-dots">
+    <p>
+      {{data.name}}
+    </p>
+  </div>
+  <h3 id="driveDetails-heading13" style="color:#000000;">
+    Venue
+  </h3>
+  <div id="driveDetails-markdown12" class="show-list-numbers-and-dots">
+    <p style="color:#000000;">
+      {{data.venue}}
+    </p>
+  </div>
+  <h3 id="driveDetails-heading14" style="color:#000000;">
+    Time
+  </h3>
+  <div id="driveDetails-markdown13" class="show-list-numbers-and-dots">
+    <p style="color:#000000;">
+      {{data.time}}
+    </p>
+  </div>
+  <h3 id="driveDetails-heading16" style="color:#000000;">
+    Job Location
+  </h3>
+    <div id="driveDetails-markdown13" class="show-list-numbers-and-dots">
+    <p style="color:#000000;">
+      {{data.joblocation}}
+    </p>
+  </div>
+  <h3 id="driveDetails-heading17" style="color:#000000;">
+    Qualification
+  </h3>
+    <div id="driveDetails-markdown13" class="show-list-numbers-and-dots">
+    <p style="color:#000000;">
+      {{data.qualification}}
+    </p>
+  </div>
+  <h3 id="driveDetails-heading18" style="color:#000000;">
+    Skills
+  </h3>
+    <div id="driveDetails-markdown13" class="show-list-numbers-and-dots">
+    <ion-list no-lines>
+        
+        <ion-item text-wrap *ngFor="let x of data.skills">
+            <ion-icon item-left color="primary" name="ios-play-outline"> </ion-icon>
+            <div>{{x}}</div>
+        </ion-item>
+    </ion-list>
+  </div>
+  <h3 id="driveDetails-heading19" style="color:#000000;">
+    Interview Process
+  </h3>
+    <div id="driveDetails-markdown13" class="show-list-numbers-and-dots">
+    <ion-list no-lines>
+        
+        <ion-item text-wrap *ngFor="let x of data.process">
+            <ion-icon item-left color="primary" name="ios-play-outline"> </ion-icon>
+            <div>{{x}}</div>
+        </ion-item>
+    </ion-list>
+  </div>
+  <h3 id="driveDetails-heading20" style="color:#000000;">
+    Compensation
+  </h3>
+    <div id="driveDetails-markdown13" class="show-list-numbers-and-dots">
+    <p style="color:#000000;">
+      {{data.compensation}}
+    </p>
+  </div>
+  <h3 id="driveDetails-heading21" style="color:#000000;">
+    Additional Benefits
+  </h3>
+    <div id="driveDetails-markdown13" class="show-list-numbers-and-dots">
+    <ion-list no-lines>
+        
+        <ion-item text-wrap *ngFor="let x of data.additionalBenefits">
+            <ion-icon item-left color="primary" name="ios-play-outline"> </ion-icon>
+            <div>{{x}}</div>
+        </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

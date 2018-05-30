@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="mynavbar">
+    <button ion-button menuToggle>
+      <ion-icon color="light" name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Training
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page8">
+  <img src="assets/imgs/logo1.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+  <h3 id="training-heading6" style="color:#000000;text-align:center;">
+    Training Partners
+  </h3>
+    <div id="training-markdown6" class="show-list-numbers-and-dots">
+    <p style="color:#000000;">
+      {{data.startMessage}}
+    </p>
+  </div>
+  
+    
+  <h3 id="training-heading7" style="color:#000000;text-align:center;">
+    Courses Offered
+  </h3>
+    <div id="training-markdown6" class="show-list-numbers-and-dots">
+    
+  </div>
+  <ion-list id="training-list5">
+    <ion-item (click)="gotoTrainingDetails(item)" text-wrap *ngFor = "let item of data.courses">
+      <ion-thumbnail item-left>
+        <img src="{{item.img}}"/>
+      </ion-thumbnail>
+      <h2>
+        {{item.name}}
+      </h2>
+    </ion-item>
+  </ion-list>
+    
+</ion-content>

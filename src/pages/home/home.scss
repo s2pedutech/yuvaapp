@@ -1,0 +1,17 @@
+page-home {
+
+    ion-slides {
+        height: 70%;
+    }
+    
+    .swiper-pagination-bullet-active{
+    background: color($colors, mynavbar) !important;
+    opacity: 1;
+  }
+    h2 {
+        color: #607d8b;
+    }
+    h4 {
+        color: #607d8b;
+    }
+}

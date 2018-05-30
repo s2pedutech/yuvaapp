@@ -1,0 +1,25 @@
+<!--
+  Generated template for the TrainingdetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="mynavbar">
+    <ion-title>Training Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <iframe width="100%" height="215" [src]="trustedVideoUrl" frameborder="0" allowfullscreen></iframe>
+    <h3 text-center>{{training.name}}</h3>
+    <h5>Duration</h5>
+    <p>{{training.duration}}</p>
+    <h5>Trainer</h5>
+    <p>{{training.trainer}}</p>
+    <!--<h5>About The Trainer</h5>
+    <p (click)="openLink()">{{training.profile}}</p>-->
+</ion-content>
